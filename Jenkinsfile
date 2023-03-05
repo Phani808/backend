@@ -9,5 +9,14 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Phani808/backend.git'
         }       
       }
+       stage('Sonar Quality status'){
+    steps{
+   
+        withSonarQubeEnv('sonarqube') {
+    sh 'mvn clean package sonar:sonar'
+      
+      }
+    } 
+}
     }   
  }    
