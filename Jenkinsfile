@@ -8,6 +8,7 @@ pipeline {
 	NEXUS_REPO_ID    = "backend-release"
         NEXUS_CREDENTIAL_ID = "nexus"
         ARTVERSION = "${env.BUILD_ID}"
+        VERSION = "$(env.BUILD_ID)"
     }
     options {
          buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')
@@ -107,11 +108,12 @@ pipeline {
         stage('Build docker image and push'){
             steps{
                 script{
-			withCredentials([string(credentialsId: 'nexus', variable: 'nexus')]) {
+		withCredentials([string(credentialsId: 'nexus_passwd', variable: 'nexus_creds')]) {
 			
-				sh 'docker build -t 34.16.136.33:8083/backend .'
-				sh 'docker login -u admin -p $nexus 34.16.136.33:8083'
-				sh 'docker push 34.16.136.33:8083/backend'
+				sh 'docker build -t 34.16.136.33:8083/backend:$VERSION .'
+				sh 'docker login -u admin -p $nexus_creds 34.16.136.33:8083'
+				sh 'docker push 34.16.136.33:8083/backend:$VERSION'
+                sh 'docker rmi  34.16.136.33:8083/backend:$VERSION'
             }
                 }
             }
