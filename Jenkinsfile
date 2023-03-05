@@ -104,6 +104,14 @@ pipeline {
                 }
             }
         }
+        stage('Build docker image and push'){
+            steps{
+                script{
+			withCredentials([string(credentialsId: 'nexus', variable: 'nexus')]) {
+			
+				sh 'docker build -t 34.16.136.33:8083/backend .'
+				sh 'docker login -u admin -p $nexus 34.16.136.33:8083'
+				sh 'docker push 34.16.136.33:8083/backend'
 
 }
 }
