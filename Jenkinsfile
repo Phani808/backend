@@ -63,7 +63,7 @@ pipeline {
         stage("Publish to Nexus Repository Manager") {
             steps {
                 script {
-                  nexusArtifactUploader artifacts: [[artifactId: 'devopsodia', classifier: '', file: 'target/devopsodia.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.devopsodia', nexusUrl: '34.16.136.33:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'backend-release', version: '0.0.1-SNAPSHOT'
+                 nexusArtifactUploader artifacts: [[artifactId: 'devopsodia', classifier: '', file: 'target/devopsodia.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.devopsodia', nexusUrl: '34.16.136.33:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'backend-release', version: '0.0.1'
 }
  }
  
