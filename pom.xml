@@ -80,3 +80,4 @@
 		</snapshotRepository>
 	</distributionManagement>
 </project>
+def pom = readMavenPom file: 'pom.xml'
