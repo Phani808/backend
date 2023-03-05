@@ -8,7 +8,7 @@ pipeline {
 	NEXUS_REPO_ID    = "backend-release"
         NEXUS_CREDENTIAL_ID = "nexus"
         ARTVERSION = "${env.BUILD_ID}"
-        VERSION = "$(env.BUILD_ID)"
+        VERSION = "${env.BUILD_ID}"
     }
     options {
          buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')
