@@ -1,6 +1,3 @@
-@Library('pipeline-maven') _
-
-import org.jenkinsci.plugins.pipeline.maven.util.MavenUtils
 pipeline {
     agent any
     environment {
