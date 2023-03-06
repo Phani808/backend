@@ -110,10 +110,10 @@ pipeline {
                 script{
 		withCredentials([string(credentialsId: 'nexus_passwd', variable: 'nexus_creds')]) {
 			
-				sh 'docker build -t 34.16.136.33:8083/backend:$VERSION .'
-				sh 'docker login -u admin -p $nexus_creds 34.16.136.33:8083'
-				sh 'docker push 34.16.136.33:8083/backend:$VERSION'
-                sh 'docker rmi  34.16.136.33:8083/backend:$VERSION'
+				sh 'docker build -t 34.125.107.168:8083/backend:$VERSION .'
+				sh 'docker login -u admin -p $nexus_creds 34.125.107.168:8083'
+				sh 'docker push 34.125.107.168:8083/backend:$VERSION'
+                sh 'docker rmi  34.125.107.168:8083/backend:$VERSION'
             }
                 }
             }
