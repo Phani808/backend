@@ -19,22 +19,22 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Phani808/backend.git'
         }       
       }
-       stage('Sonar Quality status'){
-    steps{
+    //    stage('Sonar Quality status')
+   // steps{
    
-        withSonarQubeEnv('sonarqube') {
-    sh 'mvn clean package sonar:sonar'
+     //   withSonarQubeEnv('sonarqube') {
+   // sh 'mvn clean package sonar:sonar'
       
-      }
-    } 
-}
-      stage('SonarQube Quality Gate') {
-    steps {
-        script {
-            waitForQualityGate abortPipeline: false, credentialsId: 'sonar'
-    }   
- } 
-}
+    //  }
+  //  } 
+//}
+     // stage('SonarQube Quality Gate') {
+  //  steps {
+    //    script {
+      //      waitForQualityGate abortPipeline: false, credentialsId: 'sonar'
+  //  }   
+ //} 
+//}
     stage('BUILD'){
             steps {
                 sh 'mvn clean install'
@@ -117,7 +117,15 @@ pipeline {
             }
                 }
             }
-        }               
+        }  
+        stage('Trigger Update K8s') {
+            steps{
+            script {
+                echo "triggering Update manifest Job"
+                build job: 'backend-update-k8s', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
+            }
+        }
+    }             
 
 }
 }
