@@ -83,7 +83,7 @@ pipeline {
         }
        stage("Publish to Nexus Repository Manager") {
             steps {
-                script {
+                
         //            pom = readMavenPom file: "pom.xml";
             //        filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
             //        echo "${filesByGlob[0].name} ${filesByGlob[0].path} ${filesByGlob[0].directory} ${filesByGlob[0].length} ${filesByGlob[0].lastModified}"
@@ -112,9 +112,9 @@ pipeline {
                         );
                     } 
 		
-               }
-       //     }
-      //  }
+               
+            
+       
         stage('Build docker image and push') {
     steps {
         script {
