@@ -33,7 +33,7 @@ pipeline {
             }
         }
     }
-}
+
 
 
     //    stage('Sonar Quality status')
@@ -143,6 +143,7 @@ pipeline {
    // }             
 
        }
+}   
          
           
    
