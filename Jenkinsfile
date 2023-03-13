@@ -1,13 +1,13 @@
 pipeline {
     agent any
      environment {
- //       NEXUS_VERSION = "nexus3"
-  //      NEXUS_PROTOCOL = "http"
- //       NEXUS_URL = "34.125.107.168:8081"
- //       NEXUS_REPOSITORY = "backend-release"
-//	NEXUS_REPO_ID    = "backend-release"
- //       NEXUS_CREDENTIAL_ID = "nexus"
-  //      ARTVERSION = "${env.BUILD_ID}"
+        NEXUS_VERSION = "nexus3"
+        NEXUS_PROTOCOL = "http"
+        NEXUS_URL = "34.125.12.138:8081"
+        NEXUS_REPOSITORY = "backend-release"
+	NEXUS_REPO_ID    = "backend-release"
+        NEXUS_CREDENTIAL_ID = "nexus"
+    //    ARTVERSION = "${env.BUILD_ID}"
   //      VERSION = "${env.BUILD_ID}"
     }
     options {
@@ -91,30 +91,30 @@ pipeline {
             //        artifactExists = fileExists artifactPath;
                 //    if(artifactExists) {
                 //        echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version} ARTVERSION";
-                //        nexusArtifactUploader(
-                //            nexusVersion: NEXUS_VERSION,
-                //            protocol: NEXUS_PROTOCOL,
-                //            nexusUrl: NEXUS_URL,
-                  //          groupId: pom.groupId,
-                   //         version: ARTVERSION,
-                      //      repository: NEXUS_REPOSITORY,
-                   ///         credentialsId: NEXUS_CREDENTIAL_ID,
-                   //         artifacts: [
-                    //            [artifactId: pom.artifactId,
-                   //             classifier: '',
-                    //           file: artifactPath,
-                     ////           type: pom.packaging],
-                     //           [artifactId: pom.artifactId,
-                     //           classifier: '',
-                     //           file: "pom.xml",
-                      //          type: "pom"]
-                      //      ]
-                      //  );
-                  //  } 
-		 //   else {
-         //               error "*** File: ${artifactPath}, could not be found";
-          //          }
-        // //       }
+                       nexusArtifactUploader(
+                            nexusVersion: NEXUS_VERSION,
+                           protocol: NEXUS_PROTOCOL,
+                            nexusUrl: NEXUS_URL,
+                            groupId: pom.groupId,
+                            version: ARTVERSION,
+                            repository: NEXUS_REPOSITORY,
+                            credentialsId: NEXUS_CREDENTIAL_ID,
+                           artifacts: [
+                               [artifactId: pom.artifactId,
+                              classifier: '',
+                               file: artifactPath,
+                                type: pom.packaging],
+                                [artifactId: pom.artifactId,
+                                classifier: '',
+                                file: "pom.xml",
+                                type: "pom"]
+                            ]
+                        );
+                    } 
+		    else {
+                        error "*** File: ${artifactPath}, could not be found";
+                    }
+               }
        //     }
       //  }
         stage('Build docker image and push') {
