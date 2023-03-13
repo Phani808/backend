@@ -98,7 +98,7 @@ pipeline {
                         sh "docker build -t 34.125.12.138:8083/backend:$IMAGE_NAME ."
                         sh "echo $nexus_creds | docker login -u admin --password-stdin 34.125.12.138:8083"
                         sh "docker push 34.125.12.138:8083/backend:$IMAGE_NAME"
-                        sh "docker rmi 34.125.12.138:8083/backend:$IMAGE_NAME"
+                      //  sh "docker rmi 34.125.12.138:8083/backend:$IMAGE_NAME"
                     }
                 }
             }
