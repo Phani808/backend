@@ -65,7 +65,7 @@ pipeline {
             //    success {
                   //  echo 'Generated Analysis Result'
             //    }
-          //  }
+          // }
         
        
         stage("Publish to Nexus Repository Manager") {
