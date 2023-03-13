@@ -103,6 +103,23 @@ pipeline {
                 }
             }
         }
+        stage('commit version update') {
+            steps {
+                script {
+                    withCredentials([usernamePassword(credentialsId: 'git', passwordVariable: 'USER', usernameVariable: 'PASS')]) {
+                        // git config here for the first time run
+                        sh 'git config --global user.email "mpvarma997@gmail.com"'
+                        sh 'git config --global user.name "phani"'
+
+                        sh "git remote set-url origin https://${USER}:${PASS}@github.com/Phani808/backend.git"
+                        sh 'git add .'
+                        sh 'git commit -m "ci: version bump"'
+                        sh 'git push origin HEAD:main'
+                    }
+                }
+            }
+        }
+
     }
 } 
          
