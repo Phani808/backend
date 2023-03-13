@@ -19,7 +19,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Phani808/backend.git'
         }       
       }
-      stages {
+      
     stage('increment version') {
         steps {
             script {
@@ -143,6 +143,6 @@ pipeline {
    // }             
 
        }
-         }
+         
           
    
