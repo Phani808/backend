@@ -9,5 +9,5 @@ RUN mvn -B package
 # Final stage
 FROM openjdk:11.0.13-jre-slim-buster
 WORKDIR /app
-COPY --from=build /app/target/devopsodia.war .
-CMD ["java", "-Xmx256m", "-jar", "devopsodia.war"]
+COPY --from=build /app/target/devopsodia-*.war .
+CMD ["java", "-Xmx256m", "-jar", "devopsodia-*.war"]
