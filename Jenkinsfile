@@ -28,6 +28,7 @@ pipeline {
                    def matcher = readFile('pom.xml') =~ '<version>(.+)</version>'
                     def version = matcher[0][1]
                     env.IMAGE_NAME = "$version-$BUILD_NUMBER"
+                    
                 }
             }
         }
@@ -114,6 +115,7 @@ pipeline {
                         sh 'git add .'
                         sh 'git commit -m "ci: version bump"'
                         sh 'git push origin HEAD:main'
+                        jiraGetProjectStatuses idOrKey: 'jira', site: 'jira'
                     }
                 }
             }
