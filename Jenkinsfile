@@ -118,11 +118,11 @@ pipeline {
                         sh 'git push origin HEAD:main'
                stage('jira comments') {
                 steps {
-                    script{
+                    
                         jiraComment body: 'Your issue is done', issueKey: 'PK-2'
                     }
                 }
-               }        
+                   
                     
                     }
                 }
