@@ -82,10 +82,25 @@ pipeline {
     }
     post {
         always {
-            mail bcc: '', body: "<br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "${currentBuild.result} CI: Project name -> ${env.JOB_NAME}", to: "phani.manthena27@gmail.com" 
+            script {
+                def jobName = env.JOB_NAME
+                def buildNumber = env.BUILD_NUMBER
+                def jenkinsUrl = env.JENKINS_URL
+                def subject = "${jobName} #${buildNumber} completed (${currentBuild.result})"
+                def body = """
+                Jenkins build ${jobName} #${buildNumber} completed with status: ${currentBuild.result}
+                
+                Stage status:
+                ${stageStatus}
+                
+                Jenkins URL: ${jenkinsUrl}job/${jobName}/${buildNumber}/
+                """
+                emailext body: body, subject: subject, to: 'phani.manthena27@gmail.com'
+            }
         }
     }
-}      
+    }
+     
 
           
    
