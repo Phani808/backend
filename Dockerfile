@@ -7,7 +7,7 @@ COPY src/ ./src/
 RUN mvn -B package
 
 # Final stage
-FROM openjdk:11.0.13-jre-slim-buster
+FROM gcr.io/distroless/java:11
 WORKDIR /app
 COPY --from=build /app/target/devopsodia-*.war .
 CMD ["java", "-Xmx256m", "-jar", "devopsodia-*.war"]
