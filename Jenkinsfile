@@ -60,11 +60,11 @@ pipeline {
             steps {
                 sh 'mvn checkstyle:checkstyle'
             }
-            post {
-                success {
+          //  post {
+            //    success {
                     echo 'Generated Analysis Result'
-                }
-            }
+            //    }
+          //  }
         }
        
         stage("Publish to Nexus Repository Manager") {
