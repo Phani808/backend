@@ -79,28 +79,24 @@ pipeline {
                 }
             }
         }
+    
+    stage('Send notification') {
+  steps {
+    script {
+      def stageStatus = currentBuild.currentResult.toString()
+      def buildNumber = currentBuild.number
+      def buildUrl = env.BUILD_URL
+      def subject = "Jenkins build ${buildNumber} ${stageStatus}"
+      def body = "Jenkins build ${buildNumber} ${stageStatus}.\n\nDetails: ${buildUrl}"
+      sendMail to: 'phani.manthena27@gmail.com',
+        subject: subject,
+        body: body,
+        mimeType: 'text/plain'
     }
-    post {
-        always {
-            script {
-                def jobName = env.JOB_NAME
-                def buildNumber = env.BUILD_NUMBER
-                def jenkinsUrl = env.JENKINS_URL
-                def subject = "${jobName} #${buildNumber} completed (${currentBuild.result})"
-                def body = """
-                Jenkins build ${jobName} #${buildNumber} completed with status: ${currentBuild.result}
-                
-                Stage status:
-                ${stageStatus}
-                
-                Jenkins URL: ${jenkinsUrl}job/${jobName}/${buildNumber}/
-                """
-                emailext body: body, subject: subject, to: 'phani.manthena27@gmail.com'
-            }
-        }
+  }
+}
     }
-    }
-     
+} 
 
           
    
