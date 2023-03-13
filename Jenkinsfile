@@ -1,13 +1,13 @@
 pipeline {
     agent any
-    environment {
-        NEXUS_VERSION = "nexus3"
-        NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "34.125.12.138:8081"
-        NEXUS_REPOSITORY = "backend-release"
-        NEXUS_REPO_ID    = "backend-release"
-        NEXUS_CREDENTIAL_ID = "nexus"
-    }
+  ///  environment {
+    //    NEXUS_VERSION = "nexus3"
+     //   NEXUS_PROTOCOL = "http"
+     //   NEXUS_URL = "34.125.12.138:8081"
+     //   NEXUS_REPOSITORY = "backend-release"
+     //   NEXUS_REPO_ID    = "backend-release"
+     //   NEXUS_CREDENTIAL_ID = "nexus"
+  //  }
     options {
         buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')
     }
@@ -68,28 +68,28 @@ pipeline {
           // }
         
        
-        stage("Publish to Nexus Repository Manager") {
-            steps {
-                nexusArtifactUploader(
-                    nexusVersion: NEXUS_VERSION,
-                    protocol: NEXUS_PROTOCOL,
-                    nexusUrl: NEXUS_URL,
-                    groupId: pom.groupId,
-                    repository: NEXUS_REPOSITORY,
-                    credentialsId: NEXUS_CREDENTIAL_ID,
-                    artifacts: [
-                        [artifactId: pom.artifactId,
-                         classifier: '',
-                         file: artifactPath,
-                         type: pom.packaging],
-                        [artifactId: pom.artifactId,
-                         classifier: '',
-                         file: "pom.xml",
-                         type: "pom"]
-                    ]
-                )
-            }
-        }
+      //  stage("Publish to Nexus Repository Manager") {
+         //   steps {
+          //      nexusArtifactUploader(
+           //         nexusVersion: NEXUS_VERSION,
+           //         protocol: NEXUS_PROTOCOL,
+          //          nexusUrl: NEXUS_URL,
+           ////         groupId: pom.groupId,
+            //        repository: NEXUS_REPOSITORY,
+            //        credentialsId: NEXUS_CREDENTIAL_ID,
+            //        artifacts: [
+            //            [artifactId: pom.artifactId,
+             //            classifier: '',
+             //            file: artifactPath,
+              //           type: pom.packaging],
+              //          [artifactId: pom.artifactId,
+              //           classifier: '',
+             //            file: "pom.xml",
+             //            type: "pom"]
+            //        ]
+            //    )
+          //  }
+     ///   }
                
         stage('Build docker image and push') {
             steps {
