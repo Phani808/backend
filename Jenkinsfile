@@ -32,45 +32,7 @@ pipeline {
                 }
             }
         }
-        stage('Update Jira Issue') {
-            steps {
-                script {
-                    def issueKey = "PK-2" // Replace with your issue key
-                    def jiraUrl = "https://phani997.atlassian.net//rest/api/2/issue/${issueKey}"
-                    def authHeader = "Basic " + "${env.phani.manthena27@gmail.com}:${env.ATATT3xFfGF03pH-igw5B6GgHQuhejhHzaR5cdlp_A1xNeBiLCtAt70fJA2voSWgNHPqKiXfNliJNiuF5MDfaYvSHWqJ0DDd8AH-VOeXQsh6eKqYp6bOhjx_IS_r99M73COVZ2ZBVCuJscMmOskCGnXhXH5kBAh3VwXmyesbNrDrmMXsiHxlBdg=0C05634A}".bytes.encodeBase64()
-                    
-                    def requestBody = """
-                    {
-                        "update": {
-                            "summary": [
-                                {
-                                    "set": "New Summary"
-                                }
-                            ]
-                        },
-                        "transition": {
-                            "id": "11" // Replace with your transition ID
-                        }
-                    }
-                    """
-                    
-                    def response = httpRequest acceptType: 'APPLICATION_JSON',
-                                                contentType: 'APPLICATION_JSON',
-                                                customHeaders: [[name: 'Authorization', value: authHeader]],
-                                                httpMode: 'PUT',
-                                                requestBody: requestBody,
-                                                url: jiraUrl
-                    
-                    if (response.status == 204) {
-                        println("Jira issue ${issueKey} successfully updated")
-                    } else {
-                        println("Failed to update Jira issue ${issueKey}: ${response.status} ${response.content}")
-                    }
-                }
-            }
-        }
-    }
-}
+       
 
         stage('BUILD'){
             steps {
