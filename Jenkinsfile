@@ -57,10 +57,10 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: 'nexus_passwd', variable: 'nexus_creds')]) {
-                        sh "docker build -t 34.125.12.138:8083/backend:$IMAGE_NAME ."
-                        sh "echo $nexus_creds | docker login -u admin --password-stdin 34.125.12.138:8083"
-                        sh "docker push 34.125.12.138:8083/backend:$IMAGE_NAME"
-                        // sh "docker rmi 34.125.12.138:8083/backend:$IMAGE_NAME"
+                        sh "docker build -t 34.125.175.151:8083/backend:$IMAGE_NAME ."
+                        sh "echo $nexus_creds | docker login -u admin --password-stdin 34.125.175.151:8083"
+                        sh "docker push 34.125.175.151:8083/backend:$IMAGE_NAME"
+                        sh "docker rmi 34.125.175.151:8083/backend:$IMAGE_NAME"
                     }
                 }
             }
@@ -80,21 +80,7 @@ pipeline {
             }
         }
     
-    stage('Send notification') {
-  steps {
-    script {
-      def stageStatus = currentBuild.currentResult.toString()
-      def buildNumber = currentBuild.number
-      def buildUrl = env.BUILD_URL
-      def subject = "Jenkins build ${buildNumber} ${stageStatus}"
-      def body = "Jenkins build ${buildNumber} ${stageStatus}.\n\nDetails: ${buildUrl}"
-      sendMail to: 'phani.manthena27@gmail.com',
-        subject: subject,
-        body: body,
-        mimeType: 'text/plain'
-    }
-  }
-}
+   
     }
 } 
 
