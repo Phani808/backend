@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="9.3">
-<file name="/var/lib/jenkins/workspace/ProjeckK_main@2/src/main/java/constants/db/UsersDBConstants.java">
+<file name="/var/lib/jenkins/workspace/ProjeckK_main/src/main/java/constants/db/UsersDBConstants.java">
 <error line="1" severity="error" message="Missing package-info.java file." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
 <error line="3" column="1" severity="error" message="interfaces should describe a type and hence have methods." source="com.puppycrawl.tools.checkstyle.checks.design.InterfaceIsTypeCheck"/>
 <error line="5" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
@@ -33,7 +33,7 @@
 <error line="14" column="9" severity="error" message="Redundant &apos;public&apos; modifier." source="com.puppycrawl.tools.checkstyle.checks.modifier.RedundantModifierCheck"/>
 <error line="14" column="16" severity="error" message="Redundant &apos;static&apos; modifier." source="com.puppycrawl.tools.checkstyle.checks.modifier.RedundantModifierCheck"/>
 </file>
-<file name="/var/lib/jenkins/workspace/ProjeckK_main@2/src/main/java/constants/db/BooksDBConstants.java">
+<file name="/var/lib/jenkins/workspace/ProjeckK_main/src/main/java/constants/db/BooksDBConstants.java">
 <error line="3" column="1" severity="error" message="interfaces should describe a type and hence have methods." source="com.puppycrawl.tools.checkstyle.checks.design.InterfaceIsTypeCheck"/>
 <error line="4" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
 <error line="4" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
@@ -57,7 +57,7 @@
 <error line="11" column="9" severity="error" message="Redundant &apos;public&apos; modifier." source="com.puppycrawl.tools.checkstyle.checks.modifier.RedundantModifierCheck"/>
 <error line="11" column="16" severity="error" message="Redundant &apos;static&apos; modifier." source="com.puppycrawl.tools.checkstyle.checks.modifier.RedundantModifierCheck"/>
 </file>
-<file name="/var/lib/jenkins/workspace/ProjeckK_main@2/src/main/java/constants/BookStoreConstants.java">
+<file name="/var/lib/jenkins/workspace/ProjeckK_main/src/main/java/constants/BookStoreConstants.java">
 <error line="1" severity="error" message="Missing package-info.java file." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
 <error line="3" column="1" severity="error" message="interfaces should describe a type and hence have methods." source="com.puppycrawl.tools.checkstyle.checks.design.InterfaceIsTypeCheck"/>
 <error line="4" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
@@ -67,7 +67,7 @@
 <error line="5" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
 <error line="6" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
 </file>
-<file name="/var/lib/jenkins/workspace/ProjeckK_main@2/src/main/java/config/DBConnection.java">
+<file name="/var/lib/jenkins/workspace/ProjeckK_main/src/main/java/config/DBConnection.java">
 <error line="1" severity="error" message="Missing package-info.java file." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
 <error line="8" column="1" severity="error" message="Class DBConnection should be declared as final." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
 <error line="10" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
@@ -79,7 +79,7 @@
 <error line="36" column="9" severity="error" message="&apos;}&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
 <error line="38" column="9" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
 </file>
-<file name="/var/lib/jenkins/workspace/ProjeckK_main@2/src/main/java/config/DatabaseConfig.java">
+<file name="/var/lib/jenkins/workspace/ProjeckK_main/src/main/java/config/DatabaseConfig.java">
 <error line="7" column="1" severity="error" message="Utility classes should not have a public or default constructor." source="com.puppycrawl.tools.checkstyle.checks.design.HideUtilityClassConstructorCheck"/>
 <error line="9" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
 <error line="9" column="23" severity="error" message="Variable &apos;prop&apos; must be private and have accessor methods." source="com.puppycrawl.tools.checkstyle.checks.design.VisibilityModifierCheck"/>
@@ -101,7 +101,7 @@
 <error line="28" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
 <error line="28" column="18" severity="error" message="&apos;static&apos; modifier out of order with the JLS suggestions." source="com.puppycrawl.tools.checkstyle.checks.modifier.ModifierOrderCheck"/>
 </file>
-<file name="/var/lib/jenkins/workspace/ProjeckK_main@2/src/main/java/servlets/RemoveBookServlet.java">
+<file name="/var/lib/jenkins/workspace/ProjeckK_main/src/main/java/servlets/RemoveBookServlet.java">
 <error line="1" severity="error" message="Missing package-info.java file." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
 <error line="3" column="16" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - java.sql.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
 <error line="4" column="21" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - javax.servlet.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
@@ -120,7 +120,7 @@
 <error line="31" severity="error" message="Line is longer than 80 characters (found 103)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 <error line="32" severity="error" message="Line is longer than 80 characters (found 122)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 </file>
-<file name="/var/lib/jenkins/workspace/ProjeckK_main@2/src/main/java/servlets/AddBookServlet.java">
+<file name="/var/lib/jenkins/workspace/ProjeckK_main/src/main/java/servlets/AddBookServlet.java">
 <error line="17" column="51" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
 <error line="18" severity="error" message="Line is longer than 80 characters (found 103)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 <error line="18" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
@@ -157,7 +157,7 @@
 <error line="52" column="17" severity="error" message="&apos;catch&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
 <error line="53" column="17" severity="error" message="&apos;{&apos; at column 3 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
 </file>
-<file name="/var/lib/jenkins/workspace/ProjeckK_main@2/src/main/java/servlets/AdminLoginServlet.java">
+<file name="/var/lib/jenkins/workspace/ProjeckK_main/src/main/java/servlets/AdminLoginServlet.java">
 <error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
 <error line="3" column="21" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - javax.servlet.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
 <error line="5" column="8" severity="error" message="Unused import - javax.servlet.http.HttpSession." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
@@ -185,7 +185,7 @@
 <error line="40" severity="error" message="Line is longer than 80 characters (found 99)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 <error line="42" severity="error" message="Line is longer than 80 characters (found 102)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 </file>
-<file name="/var/lib/jenkins/workspace/ProjeckK_main@2/src/main/java/servlets/UserRegisterServlet.java">
+<file name="/var/lib/jenkins/workspace/ProjeckK_main/src/main/java/servlets/UserRegisterServlet.java">
 <error line="3" column="16" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - java.sql.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
 <error line="4" column="21" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - javax.servlet.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
 <error line="10" column="15" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - java.io.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
@@ -212,7 +212,7 @@
 <error line="42" severity="error" message="Line is longer than 80 characters (found 91)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 <error line="44" severity="error" message="Line is longer than 80 characters (found 85)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 </file>
-<file name="/var/lib/jenkins/workspace/ProjeckK_main@2/src/main/java/servlets/BuyBooksServlet.java">
+<file name="/var/lib/jenkins/workspace/ProjeckK_main/src/main/java/servlets/BuyBooksServlet.java">
 <error line="2" column="15" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - java.io.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
 <error line="3" column="16" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - java.sql.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
 <error line="4" column="21" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - javax.servlet.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
@@ -320,7 +320,7 @@
 <error line="62" column="17" severity="error" message="&apos;catch&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
 <error line="63" column="17" severity="error" message="&apos;{&apos; at column 3 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
 </file>
-<file name="/var/lib/jenkins/workspace/ProjeckK_main@2/src/main/java/servlets/ViewBookServlet.java">
+<file name="/var/lib/jenkins/workspace/ProjeckK_main/src/main/java/servlets/ViewBookServlet.java">
 <error line="2" column="15" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - java.io.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
 <error line="3" column="16" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - java.sql.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
 <error line="4" column="21" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - javax.servlet.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
@@ -393,7 +393,7 @@
 <error line="49" column="17" severity="error" message="&apos;catch&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
 <error line="50" column="17" severity="error" message="&apos;{&apos; at column 3 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
 </file>
-<file name="/var/lib/jenkins/workspace/ProjeckK_main@2/src/main/java/servlets/UserLoginServlet.java">
+<file name="/var/lib/jenkins/workspace/ProjeckK_main/src/main/java/servlets/UserLoginServlet.java">
 <error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
 <error line="3" column="21" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - javax.servlet.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
 <error line="9" column="15" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - java.io.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
@@ -416,7 +416,7 @@
 <error line="34" severity="error" message="Line is longer than 80 characters (found 98)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 <error line="36" severity="error" message="Line is longer than 80 characters (found 102)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 </file>
-<file name="/var/lib/jenkins/workspace/ProjeckK_main@2/src/main/java/servlets/ReceiptServlet.java">
+<file name="/var/lib/jenkins/workspace/ProjeckK_main/src/main/java/servlets/ReceiptServlet.java">
 <error line="3" column="16" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - java.sql.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
 <error line="4" column="15" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - java.io.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
 <error line="5" column="21" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - javax.servlet.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
@@ -452,7 +452,7 @@
 <error line="60" severity="error" message="Line is longer than 80 characters (found 155)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 <error line="68" severity="error" message="Line is longer than 80 characters (found 107)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 </file>
-<file name="/var/lib/jenkins/workspace/ProjeckK_main@2/src/main/resources/application.properties">
+<file name="/var/lib/jenkins/workspace/ProjeckK_main/src/main/resources/application.properties">
 <error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
 </file>
 </checkstyle>
