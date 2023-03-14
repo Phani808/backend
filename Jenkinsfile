@@ -120,7 +120,7 @@ pipeline {
                         sh 'git config --global user.name "phani"'
                         sh "git remote set-url origin https://github.com/Phani808/backend.git"
                         sh 'git add .'
-                        sh 'git commit -m "ci: version Bump"'
+                        sh 'git commit -m "ci: Version Bump"'
                         sh 'git push origin HEAD:main'
                     }
                 }
