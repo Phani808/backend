@@ -6,6 +6,7 @@ pipeline {
     environment {
         APP_NAME = "backend"
         IMAGE_TAG = "${BUILD_NUMBER}"
+        IMAGE_NAME = "$version-$BUILD_NUMBER"
 
     }
     stages {
@@ -144,7 +145,7 @@ pipeline {
             script {
                 sh """
                 cat deployment.yml
-                sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yml
+                sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_NAME}/g' deployment.yml
                 cat deployment.yml
                 """
         }
