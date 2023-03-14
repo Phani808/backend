@@ -3,9 +3,7 @@ pipeline {
     options {
         buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')
     }
-     parameters {
-        string(name: 'IMAGE_VERSION', defaultValue: '', description: 'The version of the Docker image')
-    }
+    
     environment {
         APP_NAME = "backend"
         IMAGE_TAG = "${BUILD_NUMBER}"
@@ -147,7 +145,8 @@ pipeline {
             steps{
             script {
                 echo "triggering Update manifest Job"
-              build job: 'backend-update-k8s', parameters: [string(name: 'IMAGE_VERSION', value: params.IMAGE_VERSION)]
+                sh "curl -v -k -user Phani: 1128130815aa05948951b1606d49480525 -X POST -H 'cache-control: no-cache' -H 'content-type: application/x-www-form-urlencoded' -data 'IMAGE_NAME=${IMAGE_NAME}' 'http://34.125.172.13:8080/job/Project/job/backend-update-k8s/buildWithParameters?token=phani'"
+              
             }
             }
         }
