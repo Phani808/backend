@@ -118,28 +118,28 @@ pipeline {
                 }
             }
         }
-        stage('Commit Version Update') {
-            steps {
-                script {
-                    withCredentials([gitUsernamePassword(credentialsId: 'git', gitToolName: 'Default')]) {
-                        sh 'git config --global user.email "mpvarma997@gmail.com"'
-                        sh 'git config --global user.name "phani"'
-                        sh "git remote set-url origin https://github.com/Phani808/backend.git"
-                        sh 'git add .'
-                        sh 'git commit -m "Ci: Version Bump"'
-                        sh 'git push origin HEAD:main'
-                    }
-                }
-            }
-            post {
-                success {
-                    slackSend (color: 'good', message: "commit version update: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
-                }
-                failure {
-                    slackSend (color: 'danger', message: "commit version update: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
-                }
-            }
-        }
+      //  stage('Commit Version Update') {
+         //   steps {
+         //       script {
+         //           withCredentials([gitUsernamePassword(credentialsId: 'git', gitToolName: 'Default')]) {
+         //               sh 'git config --global user.email "mpvarma997@gmail.com"'
+          //              sh 'git config --global user.name "phani"'
+          //              sh "git remote set-url origin https://github.com/Phani808/backend.git"
+           //             sh 'git add .'
+           //             sh 'git commit -m "Ci: Version Bump"'
+           //             sh 'git push origin HEAD:main'
+              //      }
+         //     //  }
+         //   }
+          //  post {
+          //      success {
+          //          slackSend (color: 'good', message: "commit version update: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+          //      }
+          //      failure {
+          //          slackSend (color: 'danger', message: "commit version update: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+             //   }
+         //   }
+     //   }
         stage('Updating kubernetes deployment file') {
             steps{
             script {
@@ -159,7 +159,7 @@ pipeline {
                         sh 'git config --global user.email "mpvarma997@gmail.com"'
                         sh 'git config --global user.name "phani"'
                         sh "git remote set-url origin https://github.com/Phani808/backend.git"
-                        sh 'git add deployment.yaml'
+                        sh 'git add .'
                         sh 'git commit -m "update deployment.yml file"'
                         sh 'git push origin HEAD:main'
                     }
