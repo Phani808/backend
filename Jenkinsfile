@@ -12,10 +12,10 @@ pipeline {
             } 
             post {
                 success {
-                    slackSend (color: 'good', message: "Increment version stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                    slackSend (color: 'good', message: "Checkout SCM stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
                 }
                 failure {
-                    slackSend (color: 'danger', message: "Increment version stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                    slackSend (color: 'danger', message: "Checkout SCM stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
                 }
             }      
         }
@@ -58,10 +58,10 @@ pipeline {
             }
             post {
                 success {
-                    slackSend (color: 'good', message: "Increment version stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                    slackSend (color: 'good', message: "UNIT TEST stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
                 }
                 failure {
-                    slackSend (color: 'danger', message: "Increment version stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                    slackSend (color: 'danger', message: "UNIT TEST stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
                 }
             }
         }
@@ -71,10 +71,10 @@ pipeline {
             }
             post {
                 success {
-                    slackSend (color: 'good', message: "Increment version stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                    slackSend (color: 'good', message: "INTEGRATION TEST stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
                 }
                 failure {
-                    slackSend (color: 'danger', message: "Increment version stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                    slackSend (color: 'danger', message: "INTEGRATION TEST stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
                 }
             }
         }
@@ -85,10 +85,10 @@ pipeline {
             
             post {
                 success {
-                    slackSend (color: 'good', message: "Increment version stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                    slackSend (color: 'good', message: "CODE ANALYSIS WITH CHECKSTYLE: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
                 }
                 failure {
-                    slackSend (color: 'danger', message: "Increment version stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                    slackSend (color: 'danger', message: "CODE ANALYSIS WITH CHECKSTYLE: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
                 }
             }
         }
@@ -105,10 +105,10 @@ pipeline {
             }
             post {
                 success {
-                    slackSend (color: 'good', message: "Increment version stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                    slackSend (color: 'good', message: "Build docker image and push: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
                 }
                 failure {
-                    slackSend (color: 'danger', message: "Increment version stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                    slackSend (color: 'danger', message: "Build docker image and push: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
                 }
             }
         }
@@ -127,10 +127,10 @@ pipeline {
             }
             post {
                 success {
-                    slackSend (color: 'good', message: "Increment version stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                    slackSend (color: 'good', message: "commit version update: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
                 }
                 failure {
-                    slackSend (color: 'danger', message: "Increment version stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                    slackSend (color: 'danger', message: "commit version update: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
                 }
             }
         }
