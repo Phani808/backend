@@ -139,7 +139,9 @@ pipeline {
             script {
                 echo "triggering Update manifest Job"
                 build job: 'backend-update-k8s', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
-    
+            }
+            }
+        }
    
     }
 } 
