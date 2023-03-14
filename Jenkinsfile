@@ -116,7 +116,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([gitUsernamePassword(credentialsId: 'git', gitToolName: 'Default')]) {
-                        sh 'git config --global user.email "phani.manthena27@gmail.com"'
+                        sh 'git config --global user.email "mpvarma997@gmail.com"'
                         sh 'git config --global user.name "phani"'
                         sh "git remote set-url origin https://github.com/Phani808/backend.git"
                         sh 'git add .'
