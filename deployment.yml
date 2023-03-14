@@ -1,22 +1,22 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: backend
+  name: backend:20.20.8-13
   labels:
-    app: backend
+    app: backend:20.20.8-13
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend
+      app: backend:20.20.8-13
   template:
     metadata:
       labels:
-        app: backend
+        app: backend:20.20.8-13
     spec:
       containers:
-      - name: container-backend
-        image: 34.125.175.151:8083/backend:v1
+      - name: container-backend:20.20.8-13
+        image: 34.125.175.151:8083/backend:20.20.8-13
         imagePullSecrets:
       - name: registry-secret
         ports:
@@ -25,11 +25,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-svc
+  name: backend:20.20.8-13
   labels:
-    app: backend
+    app: backend:20.20.8-13
 spec:
   ports:
   - port: 8080
   selector:
-    app: backend
+    app: backend:20.20.8-13
