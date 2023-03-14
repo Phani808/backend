@@ -6,7 +6,7 @@ pipeline {
     environment {
         APP_NAME = "backend"
         IMAGE_TAG = "${BUILD_NUMBER}"
-        IMAGE_NAME = "$version-$BUILD_NUMBER"
+        
 
     }
     stages {
