@@ -138,8 +138,7 @@ pipeline {
             steps{
             script {
                 echo "triggering Update manifest Job"
-                build job: 'backend-update-k8s', parameters: [string(name: 'VERSION', value: '1.0')]
-            }
+                build job: 'backend-update-k8s',parameters: [string(name: 'DOCKERTAG', value: env.IMAGE_NAME)]
             }
         }
    
