@@ -3,6 +3,9 @@ pipeline {
     options {
         buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')
     }
+     parameters {
+        string(name: 'IMAGE_VERSION', defaultValue: '', description: 'The version of the Docker image')
+    }
     environment {
         APP_NAME = "backend"
         IMAGE_TAG = "${BUILD_NUMBER}"
@@ -144,9 +147,10 @@ pipeline {
             steps{
             script {
                 echo "triggering Update manifest Job"
-                build job: 'backend-update-k8s', parameters: [string(name: 'IMAGE_NAME', value: "${IMAGE_NAME}")]
+              build job: ' backend-update-k8s', parameters: [string(name: 'IMAGE_VERSION', value: params.IMAGE_VERSION)]
+            }
             }
         }
     }
 }
-}
+
