@@ -152,7 +152,7 @@ pipeline {
    
     }
 } 
- stage('Commit Version Update') {
+ stage('Deployment Version Update') {
             steps {
                 script {
                     withCredentials([gitUsernamePassword(credentialsId: 'git', gitToolName: 'Default')]) {
@@ -165,5 +165,6 @@ pipeline {
                     }
                 }
             }
+ } 
 }
 }
