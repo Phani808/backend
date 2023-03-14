@@ -9,7 +9,15 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Phani808/backend.git'
                 ignore: commit([$class: 'org.jenkinsci.plugins.gitclient.IgnoreNotifyCommit', excludedUsers: 'phani'])
                          
-            }       
+            } 
+            post {
+                success {
+                    slackSend (color: 'good', message: "Increment version stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                }
+                failure {
+                    slackSend (color: 'danger', message: "Increment version stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                }
+            }      
         }
         stage('increment version') {
             steps {
@@ -23,6 +31,14 @@ pipeline {
                     env.IMAGE_NAME = "$version-$BUILD_NUMBER"
                 }
             }
+            post {
+                success {
+                    slackSend (color: 'good', message: "Increment version stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                }
+                failure {
+                    slackSend (color: 'danger', message: "Increment version stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                }
+            }
         }
         stage('BUILD'){
             steps {
@@ -34,15 +50,39 @@ pipeline {
                     archiveArtifacts artifacts: '**/target/*.war'
                 }
             }
+            post {
+                success {
+                    slackSend (color: 'good', message: "Increment version stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                }
+                failure {
+                    slackSend (color: 'danger', message: "Increment version stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                }
+            }
         }
         stage('UNIT TEST'){
             steps {
                 sh 'mvn test'
             }
+            post {
+                success {
+                    slackSend (color: 'good', message: "Increment version stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                }
+                failure {
+                    slackSend (color: 'danger', message: "Increment version stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                }
+            }
         }
         stage('INTEGRATION TEST'){
             steps {
                 sh 'mvn verify'
+            }
+            post {
+                success {
+                    slackSend (color: 'good', message: "Increment version stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                }
+                failure {
+                    slackSend (color: 'danger', message: "Increment version stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                }
             }
         }
         stage ('CODE ANALYSIS WITH CHECKSTYLE'){
@@ -52,6 +92,14 @@ pipeline {
             post {
                 success {
                     echo 'Generated Analysis Result'
+                }
+            }
+            post {
+                success {
+                    slackSend (color: 'good', message: "Increment version stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                }
+                failure {
+                    slackSend (color: 'danger', message: "Increment version stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
                 }
             }
         }
@@ -66,6 +114,14 @@ pipeline {
                     }
                 }
             }
+            post {
+                success {
+                    slackSend (color: 'good', message: "Increment version stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                }
+                failure {
+                    slackSend (color: 'danger', message: "Increment version stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                }
+            }
         }
         stage('commit version update') {
             steps {
@@ -78,6 +134,14 @@ pipeline {
                         sh 'git commit -m "ci: version bump"'
                         sh 'git push origin HEAD:main'
                     }
+                }
+            }
+            post {
+                success {
+                    slackSend (color: 'good', message: "Increment version stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
+                }
+                failure {
+                    slackSend (color: 'danger', message: "Increment version stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
                 }
             }
         }
