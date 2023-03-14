@@ -7,7 +7,7 @@ pipeline {
         stage('Checkout SCM') {
             steps {
                 git branch: 'main', url: 'https://github.com/Phani808/backend.git'
-                ignore: commit([$class: 'org.jenkinsci.plugins.gitclient.IgnoreNotifyCommit', excludedUsers: 'mpvarma997@gmail.com'])
+                ignore: commit([$class: 'org.jenkinsci.plugins.gitclient.IgnoreNotifyCommit', excludedUsers: 'phani'])
                          
             }       
         }
