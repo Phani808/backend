@@ -82,11 +82,7 @@ pipeline {
             steps {
                 sh 'mvn checkstyle:checkstyle'
             }
-            post {
-                success {
-                    echo 'Generated Analysis Result'
-                }
-            }
+            
             post {
                 success {
                     slackSend (color: 'good', message: "Increment version stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
