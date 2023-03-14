@@ -3,6 +3,11 @@ pipeline {
     options {
         buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')
     }
+    environment {
+        APP_NAME = "backend"
+        IMAGE_TAG = "${IMAGE_NAME}"
+
+    }
     stages {
         stage('Checkout SCM') {
             steps {
@@ -134,12 +139,13 @@ pipeline {
                 }
             }
         }
-        stage('Trigger Update K8s') {
+        stage('Updating kubernetes deployment file') {
             steps{
             script {
-                echo "triggering Update manifest Job"
-                build job: 'backend-update-k8s',parameters: [string(name: 'DOCKERTAG', value: "$IMAGE_NAME")]
-            }
+                sh """
+                cat deployment.yml
+                sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yml
+                """
         }
    
     }
