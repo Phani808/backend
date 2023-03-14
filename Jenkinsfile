@@ -50,14 +50,7 @@ pipeline {
                     archiveArtifacts artifacts: '**/target/*.war'
                 }
             }
-            post {
-                success {
-                    slackSend (color: 'good', message: "Increment version stage: Success: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
-                }
-                failure {
-                    slackSend (color: 'danger', message: "Increment version stage: Failed: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
-                }
-            }
+           
         }
         stage('UNIT TEST'){
             steps {
