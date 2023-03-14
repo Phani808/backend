@@ -145,7 +145,8 @@ pipeline {
             steps{
             script {
                 echo "triggering Update manifest Job"
-                sh "curl -v -k -user Phani: 1128130815aa05948951b1606d49480525 -X POST -H 'cache-control: no-cache' -H 'content-type: application/x-www-form-urlencoded' -data 'IMAGE_NAME=${IMAGE_NAME}' 'http://34.125.172.13:8080/job/Project/job/backend-update-k8s/buildWithParameters?token=phani'"
+                sh "curl -v -k -user Phani: 1128130815aa05948951b1606d49480525 -X POST -H 'cache-control: no-cache' -H 'content-type: application/x-www-form-urlencoded' -d \"IMAGE_NAME=${IMAGE_NAME}\" 'http://34.125.172.13:8080/job/Project/job/backend-update-k8s/buildWithParameters?token=phani'"
+
               
             }
             }
