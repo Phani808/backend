@@ -1,0 +1,31 @@
+iCreatedUserID: BHAR00000001
+CreatedLoginTypeID: 1
+CreatedLoginTypeDependentID: 1
+AppName: Default Mobile Login APK
+AppDesc: For testing
+AppType: Default
+VersionCode: 3
+VersionName: 1.0
+PackageName: com.bhargo.user
+ServiceURL: http://182.18.157.124/Bhargo_V4.0_Demo_DbConnections/V1.0
+UserLoginType: 1
+PostLoginPage: Default Home Page
+UserLoginDetails:
+  BhargoAuthenticationType: 2
+  UserIDs:
+  - UserID: 1
+    UserIDText: Mobile No.
+    DBColumnName: PhoneNo
+  IsCaptchaRequired: N
+DefaultHomePageOptions: []
+OptionalLinks: []
+AppIconImage: http://182.18.157.124/BhargoUploadFiles/Bhargo_BhargoInnovations/APKGenerator/Default_Mobile_Login_APK/icon_bhargo_user.png
+SplashScreenBackgroundImage: http://182.18.157.124/BhargoUploadFiles/Bhargo_BhargoInnovations/APKGenerator/Default_Mobile_Login_APK/icon_bhargo_user_rounded.png
+PrimaryColorCode: '#dcc9c9'
+LightPrimaryColorCode: '#b54e4e'
+DarkPrimaryColorCode: '#be0707'
+GoogleAPIKey: AIzaSyCf8vyF4GLe9MRrudJZxIbS3Th2HcOCQz8
+GoogleServicesJSONFile: http://182.18.157.124/BhargoUploadFiles/Bhargo_BhargoInnovations/APKGenerator/Default_Mobile_Login_APK/google-services.json
+DebugMode: 1
+APPID: APP_20230609123053951
+
